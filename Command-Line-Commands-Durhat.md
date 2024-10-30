@@ -22,10 +22,10 @@
 ||
 |**touch**|creates new file (*touch text.txt*)|
 ||
-|**file**||
-|||
-|||
-|||
+|**file**|shows file type|
+||
+|**cat**|shows file content|
+||
 |||
 |||
 |||
