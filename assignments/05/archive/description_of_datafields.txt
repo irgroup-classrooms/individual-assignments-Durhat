@@ -1,0 +1,2 @@
+The file "lotr_scripts.csv" contains a dataset of the Lord of the Rings scripts displayed in three columns, categorized by a numeration, "char" and "dialog". Every line represents something that the respective chracter has said. There are 2389 lines in total.
+

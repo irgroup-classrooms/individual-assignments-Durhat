@@ -1,0 +1,17 @@
+#removed multiple whitespaces
+sed -E 's/ +/ /g' cleaned_lotr_scripts.csv > cleaned_lotr_scripts2.csv
+
+#removed whitespaces placed before , ! Or ?
+sed -E 's/ ([,!?])/\1/g' cleaned_lotr_scripts2.csv > temp1.csv
+
+#removes commas at the beginning of sentences
+sed -E 's/^, //; s/ ,/,/g' temp1.csv > temp2.csv
+
+#removes unnecessary '
+sed -E "s/'([^a-zA-Z0-9]|$)/\1/g" temp2.csv > temp3.csv
+
+#removes whitespaces at beginning or end of a line
+sed -E 's/^ *//; s/ *$//' temp3.csv > cleaned_lotr_scripts_final.csv
+
+#removes commas that come after !?., and depending on if there is a whitespace after or not, replaces them with a whitespace
+sed -E 's/([!?.,]) *, */\1 /g' cleaned_lotr_scripts_final.csv > temp_fixed.csv
